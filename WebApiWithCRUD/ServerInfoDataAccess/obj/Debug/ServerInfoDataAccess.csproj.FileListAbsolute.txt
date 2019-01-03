@@ -1,0 +1,12 @@
+C:\Users\Dheeraj.ingale\source\repos\WebApiWithCRUD\ServerInfoDataAccess\bin\Debug\ServerInfoDataAccess.dll.config
+C:\Users\Dheeraj.ingale\source\repos\WebApiWithCRUD\ServerInfoDataAccess\bin\Debug\ServerInfoDataAccess.dll
+C:\Users\Dheeraj.ingale\source\repos\WebApiWithCRUD\ServerInfoDataAccess\bin\Debug\ServerInfoDataAccess.pdb
+C:\Users\Dheeraj.ingale\source\repos\WebApiWithCRUD\ServerInfoDataAccess\bin\Debug\EntityFramework.dll
+C:\Users\Dheeraj.ingale\source\repos\WebApiWithCRUD\ServerInfoDataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Dheeraj.ingale\source\repos\WebApiWithCRUD\ServerInfoDataAccess\bin\Debug\EntityFramework.xml
+C:\Users\Dheeraj.ingale\source\repos\WebApiWithCRUD\ServerInfoDataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Dheeraj.ingale\source\repos\WebApiWithCRUD\ServerInfoDataAccess\obj\Debug\ServerInfoDataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Dheeraj.ingale\source\repos\WebApiWithCRUD\ServerInfoDataAccess\obj\Debug\ServerInfoDataAccess.csproj.CopyComplete
+C:\Users\Dheeraj.ingale\source\repos\WebApiWithCRUD\ServerInfoDataAccess\obj\Debug\ServerInfoDataAccess.dll
+C:\Users\Dheeraj.ingale\source\repos\WebApiWithCRUD\ServerInfoDataAccess\obj\Debug\ServerInfoDataAccess.pdb
+C:\Users\Dheeraj.ingale\source\repos\WebApiWithCRUD\ServerInfoDataAccess\obj\Debug\ServerInfoDataAccess.csprojAssemblyReference.cache
