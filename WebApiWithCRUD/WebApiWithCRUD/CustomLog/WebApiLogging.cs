@@ -15,6 +15,10 @@ namespace WebApiWithCRUD.CustomLog
         {
             client = new TelemetryClient();
         }
-       
+       //public TelemetryClient reglogs()
+       // {
+       //     TelemetryClient client = new TelemetryClient();
+       //     return client;
+       // }
     }
 }

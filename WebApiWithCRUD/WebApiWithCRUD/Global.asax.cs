@@ -15,7 +15,7 @@ namespace WebApiWithCRUD
     {
         protected void Application_Start()
         {   
-            //Database.SetInitializer<WebApiWithCRUD>
+            
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
@@ -23,12 +23,7 @@ namespace WebApiWithCRUD
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
 
-            //        GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings
-            //.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
-            //        GlobalConfiguration.Configuration.Formatters
-            //            .Remove(GlobalConfiguration.Configuration.Formatters.XmlFormatter);
-
-
+            
         }
     }
 }
