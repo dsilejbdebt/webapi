@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Configuration;
-using WebApiWithCRUD.Controllers;
 using Microsoft.ServiceBus.Messaging;
 using System.Runtime.Serialization;
+using Microsoft.ApplicationInsights;
 
 namespace WebApiWithCRUD.Helper
 {
@@ -13,38 +11,35 @@ namespace WebApiWithCRUD.Helper
         
         private string ServiceBusConnectionString =ConfigurationManager.ConnectionStrings["ServiceBusConnectionString"].ConnectionString;
         private string queueName = ConfigurationManager.AppSettings["QueueName"];
-        public  string CorrelationId { get; set; }
-        private string topicName = "di-demotopic";
-        private string subName = "di-demosub";
-
+        private string topicName = ConfigurationManager.AppSettings["TopicName"];
+        private TelemetryClient logs;
+       
         public MessageToServiceBus()
         {
-            CorrelationId = null;
+            logs = new TelemetryClient();
         }
 
-        public void Send(IEnumerable<string> payload)
+        public void Send(string payload)
         {
 
             try
             {
-
-                QueueClient qc = QueueClient.CreateFromConnectionString(ServiceBusConnectionString, queueName);
                 TopicClient tc = TopicClient.CreateFromConnectionString(ServiceBusConnectionString, topicName);
-                var msg = new BrokeredMessage(payload.FirstOrDefault<string>());
+                var msg = new BrokeredMessage(payload);
 
                 tc.Send(msg);
 
-                SubscriptionClient sc = SubscriptionClient.CreateFromConnectionString(ServiceBusConnectionString, topicName, subName);
-                sc.OnMessage(m => { qc.Send(new BrokeredMessage(m.GetBody<string>())); });
+                //SubscriptionClient sc = SubscriptionClient.CreateFromConnectionString(ServiceBusConnectionString, topicName, subName);
+                //sc.OnMessage(m => { qc.Send(new BrokeredMessage(m.GetBody<string>())); });
 
             }
             catch (SerializationException e)
             {
-                ServerDataController.logs.TrackException(e);
+                logs.TrackException(e);
             }
             catch (Exception e)
             {
-                ServerDataController.logs.TrackException(e);
+                logs.TrackException(e);
             }
             
         }

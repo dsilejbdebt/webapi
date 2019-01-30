@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http.Headers;
-using System.Web.Http;
+﻿using System.Web.Http;
 using WebApiWithCRUD.Filters;
+using WebApiWithCRUD.Helper;
 
 namespace WebApiWithCRUD
 {
@@ -15,8 +12,10 @@ namespace WebApiWithCRUD
 
             // to enable attribute routes
             config.MapHttpAttributeRoutes();
+            config.Filters.Add(new ValidateModelAttribute());
+            config.Filters.Add(new ValidateRefHeader());
+            config.Filters.Add(new BasicAuthorization());
 
-            
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
@@ -24,8 +23,7 @@ namespace WebApiWithCRUD
                 defaults: new { id = RouteParameter.Optional }
             );
 
-            config.Filters.Add(new ValidateModelAttribute());
-            config.Filters.Add(new ValidateRefHeader());
+           
 
             
 

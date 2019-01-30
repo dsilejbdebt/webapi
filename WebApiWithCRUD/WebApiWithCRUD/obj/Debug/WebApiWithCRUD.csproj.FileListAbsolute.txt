@@ -294,3 +294,5 @@ D:\POCs\WebApiWithCRUD\WebApiWithCRUD\obj\Debug\WebApiWithCRUD.csproj.CoreCompil
 D:\POCs\WebApiWithCRUD\WebApiWithCRUD\obj\Debug\WebApiWithCRUD.csproj.CopyComplete
 D:\POCs\WebApiWithCRUD\WebApiWithCRUD\obj\Debug\WebApiWithCRUD.dll
 D:\POCs\WebApiWithCRUD\WebApiWithCRUD\obj\Debug\WebApiWithCRUD.pdb
+D:\POCs\WebApiWithCRUD\WebApiWithCRUD\bin\Swashbuckle.Core.dll
+D:\POCs\WebApiWithCRUD\WebApiWithCRUD\bin\WebActivatorEx.dll

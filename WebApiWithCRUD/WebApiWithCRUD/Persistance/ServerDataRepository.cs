@@ -14,43 +14,63 @@ namespace WebApiWithCRUD.Persistance
 {
     public class ServerDataRepository : IServerDataRepository
     {
-        public void Add(ServerInfo std)
+        public bool Add(ServerInfo std)
         {
             try
             {
                 using (var context = new RDConnection())
                 {
-                   
-                    context.ServerInfoSet.Add(std);
-
-                    context.SaveChanges();
+                    if (std != null)
+                    {
+                        context.ServerInfoSet.Add(std);
+                        context.SaveChanges();
+                        return true;
+                    }
+                    else
+                        return false;
                 }
-                
+
+            }
+            catch (InvalidOperationException ex)
+            {
+                return true;
             }
             catch (DbUpdateException ex)
             {
                 ServerDataController.logs.TrackException(ex);
+                return false;
 
             }
            
         }
 
-        public void Delete(int id)
+        public bool Delete(int id)
         {
             try
             {
                 using (var context = new RDConnection())
                 {
                     var std = context.ServerInfoSet.Find(id);
-                    context.ServerInfoSet.Remove(std);
-
-                    context.SaveChanges();
+                    if (std != null)
+                    {
+                        context.ServerInfoSet.Remove(std);
+                        context.SaveChanges();
+                        return true;
+                    }
+                    else
+                        return false;
                 }
             }
 
+            catch (InvalidOperationException ex)
+            {
+                ServerDataController.logs.TrackException(ex);
+                return true;
+            }
             catch (NullReferenceException ex)
             {
                 ServerDataController.logs.TrackException(ex);
+                return false;
             }
         }
 

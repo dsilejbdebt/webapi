@@ -13,8 +13,8 @@ namespace WebApiWithCRUD.Persistance
     {
         ServerInfo Get(int id);
         IQueryable<ServerInfo> GetAll();
-        void Add(ServerInfo std);
-        void Delete(int id);
+        bool Add(ServerInfo std);
+        bool Delete(int id);
         bool Update(ServerInfo sd);
         
     }

@@ -26,5 +26,10 @@ namespace ServerInfoDataAccess
 
         [Required]
         public string date { get; set; }
+
+        public override string ToString()
+        {
+            return string.Format("Server_id:{0},name:{1},location:{2},date:{3}",server_id,name,loction,date);
+        }
     }
 }
